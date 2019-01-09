@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+# This webscraper was written on 2, May 2018. I simplify the code and make it more modificable yesterday. 
+# You can check the industry symbol on aastock easily. 
 """
 Created on Wed May  2 21:55:14 2018
 
