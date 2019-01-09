@@ -2,7 +2,7 @@
 """
 Created on Wed May  2 21:55:14 2018
 
-@author: user
+@author: Andy Cheung
 """
 
 #%%
@@ -31,6 +31,8 @@ browser.maximize_window()
 """Websites to be scraped"""
 url_form = "http://www.aastocks.com/en/stocks/market/industry/sector-industry-details.aspx?industrysymbol={}&t={}&hk=0" #URL form
 industry_sym = "5011" #Enter your industry symbol here
+datafile = r"C:\data_{}_summary.csv" #Enter your path for data file here
+summaryfile = r"C:\data_{}.csv" #Enter your path for summary file here
 
 #%%
 def get_element(xpath):
@@ -103,7 +105,7 @@ for num in head_end_list:
         df.iloc[:, i] = pd.to_numeric(df.iloc[:, i])
 
 print(df.describe())
-df.describe().to_csv(r"C:\Users\user\Documents\HKU_Note\FINA_2390\aastock_testing\Financials_Banks\data_5011_summary.csv", sep = ",", index = True)
-df.to_csv(r"C:\Users\user\Documents\HKU_Note\FINA_2390\aastock_testing\Financials_Banks\data_5011.csv", sep = ",", index = False)
+df.describe().to_csv(datafile.format(industry_sym), sep = ",", index = True)
+df.to_csv(summaryfile.format(industry_sym), sep = ",", index = False)
 
 browser.quit()
