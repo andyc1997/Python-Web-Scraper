@@ -10,7 +10,7 @@ Created on Wed May  2 21:55:14 2018
 
 #%%
 """
-List of industries and their symbols:
+List of industries and their codes: #More codes can be found on aastock
 
 Financials - Banks: 5011
 Financials - Insurance: 5021
@@ -27,13 +27,13 @@ from selenium import webdriver
 
 #%%
 """Open browser"""
-my_path = r"C:\Users\user\Desktop\chromedriver"
+my_path = r"C:\Users\user\Desktop\chromedriver" #Change the path of selenium browser driver here
 browser = webdriver.Chrome(executable_path = my_path)
 browser.maximize_window()
 
 """Websites to be scraped"""
 url_form = "http://www.aastocks.com/en/stocks/market/industry/sector-industry-details.aspx?industrysymbol={}&t={}&hk=0" #URL form
-industry_sym = "5011" #Enter your industry symbol here
+industry_sym = "5011" #Enter your industry code here
 datafile = r"C:\data_{}_summary.csv" #Enter your path for data file here
 summaryfile = r"C:\data_{}.csv" #Enter your path for summary file here
 
@@ -42,8 +42,7 @@ def get_element(xpath):
      target_list = []
      text = browser.find_elements_by_xpath(xpath)
      for i in range(len(text)):
-         target_list.append(text[i].text)
-         
+         target_list.append(text[i].text)   
      return target_list
 
 def get_content(df, get_list, company_list, count):
@@ -56,7 +55,6 @@ def get_content(df, get_list, company_list, count):
             df.iloc[i-1, :] = [company_list[i-1]] + data
         else:
             df.iloc[i-1, :] = data
-
     return df
 
 #%%
