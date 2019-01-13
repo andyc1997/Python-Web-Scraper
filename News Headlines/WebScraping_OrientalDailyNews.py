@@ -9,9 +9,9 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 #%%
-Today = '20180908'
+Today = '20180908' #Input date here in yyyymmdd format
 OrientalDaily = 'http://orientaldaily.on.cc/cnt/news/{}/index.html'
-FilePath = r'C:\Users\user\Documents\Database\Oritental Daily News'
+FilePath = r'C:\Users\user\Documents\Database\Oritental Daily News' #Change the path here
 FileName = r'\OrientalDailyHeadLine' + Today + '.csv'
 
 #%%
