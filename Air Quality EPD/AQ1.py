@@ -70,4 +70,4 @@ def plotMap(indicator):
         pyplot.show()
     return airTable
 #%%
-plotMap('all')
+plotMap('all') #The function 'plotMap' returns 'airTable' which contains all real time data. You may use pd.DataFrame.to_csv() to save the dataframe.
