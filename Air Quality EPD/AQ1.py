@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Jan 12 17:09:23 2019
-@Project: Air pollution: Real time Web scraper & visualization
+@Project: Air pollution: Real time Web scraper & visualization of air pollution indicators from Environmental Protection Dept (EPD) in HK.
 @author: AndyC
 """
 from bs4 import BeautifulSoup
