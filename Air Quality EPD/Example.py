@@ -4,7 +4,7 @@ Created on Mon Jan 14 21:29:52 2019
 
 @author: AndyC
 """
-#Put the package to the folder
+#Put the package into the folder
 import sys
 sys.path.append(r'C:\Users\user\Documents\Note on Python\Air Quality')
 from epdAirpkg import epdAir
