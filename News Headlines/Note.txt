@@ -1,0 +1,1 @@
+Webscrapers for news headlines are discontinued from further development until a good Chinese text analysis package is found.
