@@ -8,8 +8,7 @@ sub main{
         my $filepath = &getfile($i);
         print $filepath, "\n";
         my $tempfile = "C:\\Users\\user\\Desktop\\novel\\Novel$i.txt";
-        $mech->get($filepath, ':content_file' => $tempfile); #Encoding problem here.
-        #open("C:\\Users\\user\\Desktop\\novel\\Novel$i.txt", "<", \$text) or die "Failed!";
+        $mech->get($filepath, ':content_file' => $tempfile); #Encoding problem here. To be fixed.
     }
 }
 
