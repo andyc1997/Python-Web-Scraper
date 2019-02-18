@@ -8,18 +8,19 @@ sub main{
         my $filepath = &getfile($i);
         print $filepath, "\n";
         my $tempfile = "C:\\Users\\user\\Desktop\\novel\\Novel$i.txt";
-        $mech->get($filepath, ':content_file' => $tempfile); #Encoding problem here. To be fixed.
+        $mech->get($filepath);
+        $mech->save_content($tempfile, binmode=> ':raw', decoded_by_headers => 1);
+        #$mech->get($filepath, ':content_file' => $tempfile); #Use this code will cause encoding problem.
     }
 }
 
 sub getfile{
     my ($num) = @_;
-    if ($num < 10 and $num > 0){
-        $num = "00$num";
-    } elsif ($num < 100){
-        $num = "0$num";
+    if ($num > 0 and $num < 100){
+        $num = substr "00$num", -3;
     } else {
-        $num = "$num";
+        print "Wrong index! Failure on getting file.";
+        exit;
     }
     my $filename = 'http://www.geocities.jp/louisng888jp/yuen/';
     return "$filename$num.txt";
